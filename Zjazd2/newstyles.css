@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(202, 196, 196);
+}
+section{
+    background-color: white;
+}
+.column1{
+    position: fixed;
+    width: 50%;
+    left: 0;
+}
+.column2{
+    position: fixed;
+    width: 50%;
+    right: 0;
+}
