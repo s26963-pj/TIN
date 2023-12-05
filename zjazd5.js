@@ -31,6 +31,65 @@ class Auto{
     }
 }
 
-const x = new Auto(1999, 3900000, 6500, 5500);
-x.zad11a();
-console.log(x.cena_wyjsciowa);
+var tab = new Array();
+function zad112e(car){
+    if(car.cena_koncowa > 10000){
+        tab.push(car);
+    }
+}
+function zad112f(tab){
+    tab.array.forEach(element => {
+        element.rok += 1;
+    });
+}
+
+//----------------------------------------------------------------------------------------------//
+
+class Ocena{
+
+    przedmiot;
+    wartosc = 0;
+
+    constructor(przedmiot, wartosc){
+        this.przedmiot = przedmiot;
+        this.wartosc = wartosc;
+    }
+
+}
+
+class Student{
+    tab = new Array();
+    srednia = 0;
+    imie;
+    nazwisko;
+
+    constructor(imie, nazwisko){
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+    }
+
+    hello(){
+        return "Witaj " + this.imie + " " + this.nazwisko + ", twoja średnia ocen to: " + this.srednia;
+    }
+
+    setOcena(ocena){
+        if(typeof ocena == "object"){
+            console.log('Ustawiam wartosc ' + ocena.wartosc + ' dla przedmiotu: ' + ocena.przedmiot);
+            tab.push(ocena);
+            this.srednia = 0;
+            for(let i = 0; i < tab.length; i++){
+                this.srednia += tab[i].wartosc;
+            }
+            console.log('dziele przez ' + tab.length)
+            this.srednia /= tab.length;
+        }
+    }
+
+    getOcena(){
+        let string = '';
+        for(let i = 0; i < tab.length; i++){
+            string += 'Przedmiot: ' + tab[i].przedmiot + ' - ocena ' + tab[i].wartosc + ' ';
+        }
+        return string;
+    }
+}
